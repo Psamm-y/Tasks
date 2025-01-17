@@ -80,10 +80,12 @@ public class CommisionEmployee {
         CommisionEmployee employee = new CommisionEmployee("Samuel","Ampadu","126-553-48",36,0.36);
         System.out.println(employee.toString());
 
-        employee.setGrossSales(18);
+        employee.setGrossSales(18); //Gross sales updated
         System.out.println(employee.getGrossSales());
-        employee.setCommisionRate(0.87);
+        employee.setCommisionRate(0.87); //commission Rate updated
         System.out.println(employee.getCommisionRate());
+
+        System.out.println(employee.earnings()); //employee earnings
     }
 }
 
