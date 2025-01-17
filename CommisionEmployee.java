@@ -79,6 +79,11 @@ public class CommisionEmployee {
     public static void main(String [] args){
         CommisionEmployee employee = new CommisionEmployee("Samuel","Ampadu","126-553-48",36,0.36);
         System.out.println(employee.toString());
+
+        employee.setGrossSales(18);
+        System.out.println(employee.getGrossSales());
+        employee.setCommisionRate(0.87);
+        System.out.println(employee.getCommisionRate());
     }
 }
 
