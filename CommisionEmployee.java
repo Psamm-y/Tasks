@@ -8,13 +8,13 @@ public class CommisionEmployee {
     private String lastName;
     private String socialSecurityNumber;
     private double grossSales;
-    private double commisionRate;
+    private double commissionRate;
     public CommisionEmployee(String firstname, String lastName, String socialSecurityNumber, double grossSales, double commisionRate) {
         this.firstname = firstname;
         this.lastName = lastName;
         this.socialSecurityNumber = socialSecurityNumber;
         this.grossSales = grossSales;
-        this.commisionRate = commisionRate;
+        this.commissionRate = commisionRate;
     }
     public String getFirstname() {
         return firstname;
@@ -52,21 +52,33 @@ public class CommisionEmployee {
     }
 
     public double getCommisionRate() {
-        return commisionRate;
+        return commissionRate;
     }
 
-    public void setCommisionRate(double commisionRate) {
-        if(commisionRate<0.0 || commisionRate>1.0){
+    public void setCommisionRate(double commissionRate) {
+        if(commissionRate<0.0 || commissionRate>1.0){
             throw new IllegalArgumentException("Commision Rate must be between 0 and 1");
         }
-        this.commisionRate = commisionRate;
+        this.commissionRate = commissionRate;
     }
 
     public double earnings(){
-        return grossSales*commisionRate;
+        return grossSales*commissionRate;
+
+    }
+
+    public String toString(){
+        return "Employee{\n" +
+                "First name: "+  firstname+"\n"+
+                "Last name: "+ lastName+ "\n"+
+                "Social Security Number: " + socialSecurityNumber+ "\n"+
+                "Gross sales: "+ grossSales+ "\n"+
+                "Commission rate: "+commissionRate+"\n"+
+                "}";
     }
     public static void main(String [] args){
-
+        CommisionEmployee employee = new CommisionEmployee("Samuel","Ampadu","126-553-48",36,0.36);
+        System.out.println(employee.toString());
     }
 }
 
