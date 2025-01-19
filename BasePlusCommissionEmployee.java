@@ -13,7 +13,7 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
 
 
     public BasePlusCommissionEmployee(String firstName,String lastName,String socialSecurityNumber,double grossSSales, double commissionRate,double baseSalary){
-        super(firstName,lastName,socialSecurityNumber,grossSSales,commissionRate);
+        super(firstName,lastName,socialSecurityNumber,grossSSales,commissionRate); //initialize inherited fields from superClass
         setBaseSalary(baseSalary);
     }
 }
