@@ -2,20 +2,20 @@ package Tasks;
 
 public class CommissionEmployee {
     private String firstname;
-
-
-
     private String lastName;
     private String socialSecurityNumber;
     private double grossSales;
     private double commissionRate;
-    public CommissionEmployee(String firstname, String lastName, String socialSecurityNumber, double grossSales, double commisionRate) {
+
+    public CommissionEmployee(){};//Overloading constructor
+    public CommissionEmployee(String firstname, String lastName, String socialSecurityNumber, double grossSales, double commissionRate) {
         this.firstname = firstname;
         this.lastName = lastName;
         this.socialSecurityNumber = socialSecurityNumber;
         setGrossSales(grossSales);
         setCommisionRate(commissionRate);
     }
+
     public String getFirstname() {
         return firstname;
     }
@@ -45,7 +45,7 @@ public class CommissionEmployee {
     }
 
     public void setGrossSales(double grossSales) {
-        if (grossSales <0.0){
+        if (grossSales < 0.0) {
             throw new IllegalArgumentException("Gross Sales must be greater or equal to 0");
         }
         this.grossSales = grossSales;
@@ -56,31 +56,46 @@ public class CommissionEmployee {
     }
 
     public void setCommisionRate(double commissionRate) {
-        if(commissionRate<0.0 || commissionRate>1.0){
+        if (commissionRate < 0.0 || commissionRate > 1.0) {
             throw new IllegalArgumentException("Commision Rate must be between 0 and 1");
         }
         this.commissionRate = commissionRate;
     }
 
-    public double earnings(){
-        return grossSales*commissionRate;
+    public double earnings() {
+        return grossSales * commissionRate;
 
     }
 
-    public String toString(){
+
+    //Override toString method
+    @Override
+    public String toString() {
         return "Employee{\n" +
-                "First name: "+  firstname+"\n"+
-                "Last name: "+ lastName+ "\n"+
-                "Social Security Number: " + socialSecurityNumber+ "\n"+
-                "Gross sales: "+ grossSales+ "\n"+
-                "Commission rate: "+commissionRate+"\n"+
+                "First name: " + firstname + "\n" +
+                "Last name: " + lastName + "\n" +
+                "Social Security Number: " + socialSecurityNumber + "\n" +
+                "Gross sales: " + grossSales + "\n" +
+                "Commission rate: " + commissionRate + "\n" +
                 "}";
     }
-    public static void main(String [] args){
-        CommissionEmployee employee = new CommissionEmployee("Samuel","Ampadu","126-553-48",36,3);
-        System.out.println(employee.toString());
 
-        employee.setGrossSales(18); //Gross sales updated
+    public static void main(String[] args) {
+        try{
+            CommissionEmployee employee = new CommissionEmployee("Samuel", "Ampadu", "126-553-48", 36, 3);
+            System.out.println(employee.toString());
+        }catch(IllegalArgumentException m){
+            System.out.println("Error: "+m.getMessage());
+        };
+
+        try{
+            employee.setGrossSales(18);
+        }catch (IllegalArgumentException m){
+            System.out.println("Error: "+m.getMessage());
+        }
+
+
+         //Gross sales updated
         System.out.println(employee.getGrossSales());
         employee.setCommisionRate(0.87); //commission Rate updated
         System.out.println(employee.getCommisionRate());
