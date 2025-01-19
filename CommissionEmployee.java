@@ -9,7 +9,7 @@ public class CommissionEmployee {
     private String socialSecurityNumber;
     private double grossSales;
     private double commissionRate;
-    public CommisionEmployee(String firstname, String lastName, String socialSecurityNumber, double grossSales, double commisionRate) {
+    public CommissionEmployee(String firstname, String lastName, String socialSecurityNumber, double grossSales, double commisionRate) {
         this.firstname = firstname;
         this.lastName = lastName;
         this.socialSecurityNumber = socialSecurityNumber;
@@ -77,7 +77,7 @@ public class CommissionEmployee {
                 "}";
     }
     public static void main(String [] args){
-        CommisionEmployee employee = new CommisionEmployee("Samuel","Ampadu","126-553-48",36,3);
+        CommissionEmployee employee = new CommissionEmployee("Samuel","Ampadu","126-553-48",36,3);
         System.out.println(employee.toString());
 
         employee.setGrossSales(18); //Gross sales updated
