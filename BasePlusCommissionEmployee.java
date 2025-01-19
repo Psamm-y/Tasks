@@ -1,10 +1,11 @@
 package Tasks;
 
-public class BasePlusCommissionEmployee {
+public class BasePlusCommissionEmployee extends CommissionEmployee{
     private double baseSalary;
 
-    public BasePlusCommissionEmployee(String firstname,String lastName,String socialSecurityNumber,double gorssSSales, double commissionRate,double baseSalary){
-    
+    public BasePlusCommissionEmployee(String firstName,String lastName,String socialSecurityNumber,double grossSSales, double commissionRate,double baseSalary){
+        super(firstName,lastName,socialSecurityNumber,grossSSales,commissionRate);
+        this.baseSalary=baseSalary;
     }
 }
 
