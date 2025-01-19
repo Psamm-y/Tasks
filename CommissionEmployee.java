@@ -1,6 +1,6 @@
 package Tasks;
 
-public class CommisionEmployee {
+public class CommissionEmployee {
     private String firstname;
 
 
@@ -13,8 +13,8 @@ public class CommisionEmployee {
         this.firstname = firstname;
         this.lastName = lastName;
         this.socialSecurityNumber = socialSecurityNumber;
-        this.grossSales = grossSales;
-        this.commissionRate = commisionRate;
+        setGrossSales(grossSales);
+        setCommisionRate(commissionRate);
     }
     public String getFirstname() {
         return firstname;
@@ -77,7 +77,7 @@ public class CommisionEmployee {
                 "}";
     }
     public static void main(String [] args){
-        CommisionEmployee employee = new CommisionEmployee("Samuel","Ampadu","126-553-48",36,0.36);
+        CommisionEmployee employee = new CommisionEmployee("Samuel","Ampadu","126-553-48",36,3);
         System.out.println(employee.toString());
 
         employee.setGrossSales(18); //Gross sales updated
