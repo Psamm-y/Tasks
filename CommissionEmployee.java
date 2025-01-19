@@ -7,7 +7,10 @@ public class CommissionEmployee {
     private double grossSales;
     private double commissionRate;
 
-    public CommissionEmployee(){};//Overloading constructor
+    //Default constructor
+    public CommissionEmployee(){};//Overloading
+
+    //constructor with parameters
     public CommissionEmployee(String firstname, String lastName, String socialSecurityNumber, double grossSales, double commissionRate) {
         this.firstname = firstname;
         this.lastName = lastName;
@@ -81,11 +84,13 @@ public class CommissionEmployee {
     }
 
     public static void main(String[] args) {
+        CommissionEmployee employee= null;
         try{
-            CommissionEmployee employee = new CommissionEmployee("Samuel", "Ampadu", "126-553-48", 36, 3);
+             employee = new CommissionEmployee("Samuel", "Ampadu", "126-553-48", -2, 0.3);
             System.out.println(employee.toString());
         }catch(IllegalArgumentException m){
             System.out.println("Error: "+m.getMessage());
+            return;
         };
 
         try{
@@ -93,12 +98,6 @@ public class CommissionEmployee {
         }catch (IllegalArgumentException m){
             System.out.println("Error: "+m.getMessage());
         }
-
-
-         //Gross sales updated
-        System.out.println(employee.getGrossSales());
-        employee.setCommisionRate(0.87); //commission Rate updated
-        System.out.println(employee.getCommisionRate());
 
         System.out.println(employee.earnings()); //employee earnings
     }
