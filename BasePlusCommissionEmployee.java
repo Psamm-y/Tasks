@@ -19,12 +19,22 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
     }
     public String toString(){
         return super.toString()+
-                "Base Salary: "+ baseSalary;
+                "\nBase Salary: "+ baseSalary+"\n"+
+                "Earnings: "+earnings();
     }
-    
+
     public BasePlusCommissionEmployee(String firstName,String lastName,String socialSecurityNumber,double grossSSales, double commissionRate,double baseSalary){
         super(firstName,lastName,socialSecurityNumber,grossSSales,commissionRate); //initialize inherited fields from superClass
         setBaseSalary(baseSalary);
+    }
+
+    public static void main(String[] args){
+        BasePlusCommissionEmployee baseSalaryEmployee= null;
+        try{
+            baseSalaryEmployee=new BasePlusCommissionEmployee("Samuel","Ampadu","12132-13",23,0.7,100);
+        }catch (IllegalArgumentException e){
+            System.out.println("Error: "+e.getMessage());
+        }
     }
 }
 
