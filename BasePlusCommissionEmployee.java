@@ -19,8 +19,9 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
     }
     public String toString(){
         return super.toString()+
-                "Base Salary: "
+                "Base Salary: "+ baseSalary;
     }
+    
     public BasePlusCommissionEmployee(String firstName,String lastName,String socialSecurityNumber,double grossSSales, double commissionRate,double baseSalary){
         super(firstName,lastName,socialSecurityNumber,grossSSales,commissionRate); //initialize inherited fields from superClass
         setBaseSalary(baseSalary);
