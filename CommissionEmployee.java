@@ -80,13 +80,13 @@ public class CommissionEmployee {
                 "Social Security Number: " + socialSecurityNumber + "\n" +
                 "Gross sales: " + grossSales + "\n" +
                 "Commission rate: " + commissionRate + "\n" +
-                "}";
+                "}\n";
     }
 
     public static void main(String[] args) {
         CommissionEmployee employee= null;
         try{
-             employee = new CommissionEmployee("Samuel", "Ampadu", "126-553-48", -2, 0.3);
+             employee = new CommissionEmployee("Samuel", "Ampadu", "126-553-48", 2, 0.3);
             System.out.println(employee.toString());
         }catch(IllegalArgumentException m){
             System.out.println("Error: "+m.getMessage());
