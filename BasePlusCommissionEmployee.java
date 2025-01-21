@@ -32,6 +32,7 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
         BasePlusCommissionEmployee baseSalaryEmployee= null;
         try{
             baseSalaryEmployee=new BasePlusCommissionEmployee("Samuel","Ampadu","12132-13",23,0.7,100);
+            System.out.println(baseSalaryEmployee.toString());
         }catch (IllegalArgumentException e){
             System.out.println("Error: "+e.getMessage());
         }
