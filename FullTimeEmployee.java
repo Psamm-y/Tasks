@@ -1,5 +1,5 @@
 package Tasks;
 
-public abstract class FullTimeEmployee {
+public class FullTimeEmployee extends Employee() {
     
 }
