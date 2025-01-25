@@ -1,16 +1,17 @@
 package Tasks;
 
 public abstract class Employee {
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setEmployeeId(String employeeId) {
-        this.employeeId = employeeId;
-    }
 
     private String name;
     private String employeeId;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
 
     public Employee(String name, String employeeId){
         this.name=name;
