@@ -22,5 +22,7 @@ public class FullTimeEmployee extends Employee{
         System.out.println("Employee Name: "+ftemployee.getName());
         System.out.println("Employee Id: "+ftemployee.getEmployeeId());
         System.out.println("Employee Salary: "+ftemployee.getSalary());
+
+        ftemployee.calculatePay();
     }
 }
