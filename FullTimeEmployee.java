@@ -7,6 +7,10 @@ public class FullTimeEmployee extends Employee{
         return salary;
     }
 
+    public void setSalary(double salary){
+        this.salary=salary;
+    }
+
     public FullTimeEmployee(String name, String employeeId,double salary) {
         super(name, employeeId);
         this.salary= salary;
@@ -24,5 +28,12 @@ public class FullTimeEmployee extends Employee{
         System.out.println("Employee Salary: "+ftemployee.getSalary());
 
         ftemployee.calculatePay();
+
+        //testing different salary values to calculate pay
+        try{
+            ftemployee.setSalary(234444);
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getCause());
+        }
     }
 }
