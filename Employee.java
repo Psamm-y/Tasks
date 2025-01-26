@@ -15,7 +15,8 @@ public abstract class Employee {
 
     public Employee(String name, String employeeId){
         this.name=name;
+        this.employeeId=employeeId;
     }
-    public abstract double calculatePay();
+    public abstract void calculatePay();
 
 }
